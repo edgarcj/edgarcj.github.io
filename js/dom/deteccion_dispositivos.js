@@ -75,6 +75,6 @@ export default function userDeviceInfo(id) {
   /* Redirecciones */
 
   if (isMobile.android()) {
-    window.location.href = "https://es.wikipedia.org/wiki/Wikipedia:Portada";
+    window.location.href = "https://edgarcj.github.io/";
   }
 }
