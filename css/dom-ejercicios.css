@@ -1,0 +1,366 @@
+/* *********** Reset CSS ************* */
+:root{
+        --main-font: sans-serif;
+        --font-size: 16px;
+        --main-color: #f7df1d;
+        --second-color: #222;
+        --main-modal-color: rgba(247,222,30,0.85);
+        --second-modal-color: rgba(34,34,34,0.85);
+}
+
+html{
+        box-sizing: border-box;
+        font-family: var(--main-font);
+        font-size: var(--font-size);
+        scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after{
+        box-sizing: inherit;
+}
+
+body{
+        margin: 0;
+        overflow-x: hidden;
+}
+
+img{
+        height: auto;
+        max-width: 100%;
+}
+
+/* ************** menu-hamburguesa *************** */
+
+.header {
+        background-color: var(--main-color);
+        color: var(--second-color);
+        position: sticky;
+        padding: 1rem;
+        top: 0;
+        z-index: 998;
+}
+
+.header h1 {
+        margin: 0 auto;
+        text-align: center;
+}
+
+.section {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: var(--container-width);
+        min-height: 100vh;
+        padding: 2rem;
+        padding-top: 4rem;
+        text-align: center;
+        width: 100%;
+}
+
+.panel {
+        background-color: var(--second-modal-color);
+        bottom: 0;
+        left: 0;
+        overflow-y: auto;
+        position: fixed;
+        right: 0;
+        top: 0;
+        transform: translate(100%,0);
+        transition: transform 0.3s ease;
+        width: 100%;
+        z-index: 998;
+}
+
+.panel.is-active{
+        transform: translate(0,0);
+}
+
+.panel-btn{
+        align-items: center;
+        background-color: var(--main-color);
+        border-radius: 50%;
+        bottom: 1vh;
+        display: flex;
+        height: 4rem;
+        justify-content: center;
+        padding: 0;
+        position: fixed;
+        right: 1vw;
+        width: 4rem;
+        z-index: 999;
+}
+
+.menu {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        text-align: center;
+        width: inherit;
+}
+
+.menu a {
+        color: var(--main-color);
+        display: block;
+        font-size: 1.5rem;
+        padding: 2rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        width: inherit;
+}
+
+.menu a:hover{
+        background-color: var(--main-modal-color);
+        color: var(--second-color);
+        font-weight: bold;
+}
+
+/* *************Eventos del teclado ************* */
+
+.stage {
+        background-color: var(--second-color);
+        display: flex;
+        min-height: 50vh;
+}
+
+.ball {
+        background-color: var(--main-color);
+        border-radius: 50%;
+        height: 4rem;
+        margin: auto;
+        width: 4rem;
+}
+
+/* ********** ScrollTopButton ********** */
+.scroll-top-btn {
+        background-color: var(--main-color);
+        border: 0;
+        border-radius: 50%;
+        bottom: 1vh;
+        color: var(--second-color);
+        cursor: pointer;
+        font-size: 2rem;
+        font-weight: bold;
+        height: 4rem;
+        outline: 0;
+        position: fixed;
+        right: calc(4.25rem + 1vw);
+        transition: all 0.3s ease-out;
+        width: 4rem;
+        z-index: 999;
+}
+
+.scroll-top-btn:hover{
+        background-color: var(--second-color);
+        color: var(--main-color);
+}
+
+.hidden {
+        opacity: 0;
+        visibility: hidden;
+}
+
+/* ********** DarkThemeButton ********** */
+
+.dark-theme-btn {
+        background-color: var(--main-color);
+        border: 0;
+        border-radius: 50%;
+        bottom: 1vh;
+        color: var(--second-color);
+        cursor: pointer;
+        font-size: 2rem;
+        font-weight: bold;
+        height: 4rem;
+        left: 1vw;
+        outline: 0;
+        position: fixed;
+        transition: all 0.3s ease-out;
+        width: 4rem;
+        z-index: 999;
+}
+
+.dark-theme-btn:hover {
+        background-color: var(--second-color);
+        color: var(--main-color);
+}
+
+.dark-mode {
+        background-color: var(--second-color);
+        color: var(--main-color);
+}
+
+/* **********    Network Status    ********** */
+
+.online,
+.offline{
+        background-color: #1b5e20;
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 1rem;
+        position: sticky;
+        text-align: center;
+        top: 0;
+        z-index: 1000;
+}
+
+.offline{
+        background-color: #b71c1c;
+}
+
+/* ********** Search Filters ********** */
+
+.cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+        background-color: var(--second-color);
+        color: var(--main-color);
+        transition: all 0.3s ease-out;
+}
+
+.card img{
+        width: 100%;
+        height: auto;
+}
+
+.card figcaption{
+        padding: 1rem;
+}
+
+.filter {
+        /*display: none;*/
+        opacity: 0;
+        visibility: hidden;
+        order: 1;
+}
+
+/* ********** Responsive Slider ********** */
+
+.slider {
+        margin: 1rem auto;
+        position: relative;
+        text-align: center;
+        width: 80%;
+}
+
+.slider-slides {
+        height: 400px;
+        position: relative;
+}
+
+.slider-slide {
+        position: absolute;
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        top: 0;
+        transition: opacity 1s ease;
+        visibility: hidden;
+        width: 100%;
+}
+
+.slider-slide img{
+        height: inherit;
+        width: inherit;
+        object-fit: cover;
+        object-position: 50% 0%;
+}
+
+.slider-slide.active {
+        opacity: 1;
+        visibility: visible;
+}
+
+.slider-btns {
+        position: absolute;
+        top: 50%;
+        display: flex;
+        font-size: 3rem;
+        font-weight: bold;
+        justify-content: space-between;
+        width: 100%;
+}
+
+.slider a {
+        display: block;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        border: thin solid #000;
+        text-decoration: none;
+        background-color: #fff;
+        color: #000;
+        transition: all 0.3s ease;
+}
+
+.slider a:hover{
+        color: #4d4d4d;
+}
+
+/* **********    ScrollSpy    ********** */
+@media screen and (min-width: 1024px) {
+        body{
+                display: grid;
+                grid-template-columns: 80% 20%;
+                grid-template-rows: 4rem auto;
+                grid-template-areas: 
+                "header header" 
+                "main   panel";
+        }
+
+        main{
+                grid-area: main;
+        }
+
+        .header{
+                grid-area: header;
+        }
+
+        .panel{
+                align-self: start;
+                background-color: var(--second-color);
+                grid-area: panel;
+                justify-content: flex-start;
+                position: sticky;
+                top: 4rem;
+                transform: translate(0,0);
+                opacity: 1;
+                visibility: visible;
+                z-index: 997;
+        }
+
+        .panel-btn{
+                display: none;
+        }
+
+        .menu{
+                justify-content: start;
+                text-align: right;
+        }
+
+        .menu a{
+                font-size: 1rem;
+                padding: 0.75rem;
+        }
+
+        .menu a:hover,
+        .menu a.active{
+                color: var(--second-color);
+                background-color: var(--main-color);
+        }
+
+        .scroll-top-btn{
+                right: initial;
+                left: calc(4.5rem + 1vw);
+        }
+}
+
+video{
+        width: 100%;
+        height: 100vh;
+}
