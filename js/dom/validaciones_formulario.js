@@ -54,7 +54,7 @@ export default function contactFormValidation() {
     })
       .then((res) => (res.ok ? res.json() : Promise.reject(res)))
       .then((json) => {
-        console.log(json);
+        //console.log(json);
         $loader.classList.add("none");
         $response.classList.remove("none");
         $response.innerHTML = `<p>${json.message}</p > `;
