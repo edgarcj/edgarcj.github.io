@@ -40,7 +40,7 @@ export default function contactFormValidation() {
   });
 
   d.addEventListener("submit", (e) => {
-    //e.preventDefault();
+    e.preventDefault();
     alert("Enviando Formulario");
 
     const $loader = d.querySelector(".contact-form-loader"),
